@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block content %}
+<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+  {% for i in m %} {% if i.up == False %}
+  <input type="checkbox" id="my-modal-{{i.id}}" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box relative w-11/12">
+      <label
+        for="my-modal-{{i.id}}"
+        class="btn btn-sm btn-circle absolute right-2 top-2"
+        >✕</label
+      >
+      <h3 class="text-lg font-bold">Trailer :: {{i.name}}</h3>
+      <!-- <p>{{i.trailer}}</p> -->
+      <a href="{{i.trailer}}">Link</a>
+      <!-- <p class="py-4">{{ i.trailer|slice:"17:" }}</p> -->
+      <iframe
+        width="460px"
+        height="250px%"
+        src="https://www.youtube.com/embed/{{ i.trailer|slice:'17:' }}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      >
+      </iframe>
+    </div>
+  </div>
+  <label for="my-modal-{{i.id}}">
+    <div class="card w-96 glass mt-7">
+      <figure>
+        <img src="{{i.image.url}}" alt="car!" />
+      </figure>
+      <div class="card-body">
+        <div class="card-actions flex justify-between items-center">
+          <!-- <div class="flex justify-between items-center"> -->
+          <div class="badge badge-outline">{{i.language}}</div>
+          <div class="badge text-right">{{i.duration}}</div>
+        </div>
+        <div class="flex justify-between items-center">
+          <h2 class="card-title">{{i.name}}</h2>
+          <p class="text-right">{{i.rating}}</p>
+        </div>
+        <!-- <p>{{i.trailer}}</p> -->
+        <p>Starring: {{i.cast}}</p>
+        <p></p>
+
+        <div class="card-actions justify-start">
+          <button class="btn btn-primary">
+            <a href="/details/{{i.id}}/"> Book now!</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </label>
+  {% endif %} {% endfor %}
+</div>
+{% endblock content %}
