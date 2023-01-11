@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="content-section">
+  <form method="POST">
+    <div>
+      {% csrf_token %}
+      <div class="mockup-window border glass mt-7">
+        <div class="navbar glass container-sm flex-col">
+          {{form.as_p}}
+          <button class="btn glass text-black" type="submit">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <small class="text-muted">
+      Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
+    </small>
+  </div>
+</div>
+{% endblock content %}
