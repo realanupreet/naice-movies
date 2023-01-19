@@ -23,6 +23,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <div id="v-container">
+      <video
+        id="videobcg"
+        preload="auto"
+        autoplay="true"
+        loop="loop"
+        muted="muted"
+        volume="0"
+      >
+        <source src="{% static 'bg.mp4' %}" type="video/mp4" />
+        Sorry, your browser does not support HTML5 video.
+      </video>
+    </div>
     <div class="super_container container-sm">
       {% block content %}{% endblock %}
     </div>
