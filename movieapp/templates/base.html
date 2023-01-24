@@ -20,6 +20,27 @@
       rel="stylesheet"
       type="text/css"
     />
+    <style>
+      
+      #v-container {
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      #videobcg {
+        width: inherit;
+        height: inherit;
+        -o-filter: blur(15px);
+        filter: blur(15px);
+        object-fit: cover;
+        transform: scale(1.04);
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
