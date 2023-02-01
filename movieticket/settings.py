@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'movieapp',
+'bakery',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -140,3 +141,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+
+BUILD_DIR = 'build'
+
+STATIC_ROOT = "static_root"
