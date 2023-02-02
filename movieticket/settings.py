@@ -32,14 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'movieapp',
-'bakery',
+    'bakery',
 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'livereload',
+    # 'livereload',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig'
 
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'livereload.middleware.LiveReloadScript',
+    # 'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'movieticket.urls'
